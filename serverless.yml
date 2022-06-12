@@ -1,0 +1,12 @@
+service: push-mongodb
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  getWeather:
+    handler: handler.push_mongo
+    events:
+      - sqs: arn:aws:sqs:us-east-1:504938666559:scc_proj
